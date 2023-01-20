@@ -1,4 +1,4 @@
-import Header from "./Header";
+import Header from "~/components/Layout/components/Header";
 import Sidebar from "./Siderbar";
 
 function DefaultLayout({ children }) {
@@ -10,7 +10,7 @@ function DefaultLayout({ children }) {
         <div className="content">{children}</div>
       </div>
     </div>
-  ); 
+  );
 }
 
 export default DefaultLayout;
