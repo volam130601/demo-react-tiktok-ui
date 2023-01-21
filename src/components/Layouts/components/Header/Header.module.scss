@@ -18,7 +18,8 @@
   align-items: center;
   justify-content: space-between;
 }
-.search , .search-result {
+.search,
+.search-result {
   width: 361px;
 }
 
@@ -63,7 +64,7 @@
   padding: 5px 12px;
   font-size: 1.4rem;
   font-weight: 600;
-  color: rgba(22, 24, 35, 0.5)
+  color: rgba(22, 24, 35, 0.5);
 }
 
 .clear,
@@ -93,5 +94,9 @@
   }
 }
 
-.actions {
+.more-btn {
+  font-size: 2rem;
+  margin-left: 28px;
+  padding: 4px 8px;
+  background-color: transparent;
 }
