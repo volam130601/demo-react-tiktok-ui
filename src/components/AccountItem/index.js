@@ -8,13 +8,13 @@ const cx = classNames.bind(styles);
 function AccountItem() {
   return (
     <div className={cx("wrapper")}>
-      <img className={cx("avatar")} src="https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/1b970225634dfd34932896b7d6e0a746~c5_300x300.webp?x-expires=1674446400&x-signature=nVuSHMfTwubvnAzskl6EyYlZUr4%3D" alt="Linhka" />
+      <img className={cx("avatar")} src="https://www.invert.vn/media/uploads/uploads/2022/12/03191809-2.jpeg" alt="Girl xinh" />
       <div className={cx("info")}>
         <h4 className={cx("name")}>
-          <span>Vo Lam</span>
+          <span>Girl Xinh</span>
           <FontAwesomeIcon className={cx('check')} icon={faCheckCircle} />
         </h4>
-        <span className={cx("username")}>lamlbx123</span>
+        <span className={cx("username")}>girl123</span>
       </div>
     </div>
   );
