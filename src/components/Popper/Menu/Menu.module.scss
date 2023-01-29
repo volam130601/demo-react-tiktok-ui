@@ -1,7 +1,7 @@
 //Menu wrapper
 .menu-list {
   width: 224px;
-  
+
   .menu-item {
     margin-left: 0;
   }
@@ -9,6 +9,10 @@
 
 .menu-popper {
   padding-bottom: 8px;
+}
+
+.menu-body {
+  overflow-y: auto;
 }
 
 //Menu item
@@ -21,18 +25,18 @@
   font-weight: 600;
 
   &.separate {
-      border-top: 1px solid rgba(22, 24, 35, 0.12);
+    border-top: 1px solid rgba(22, 24, 35, 0.12);
   }
 
-
   &:hover {
-    background-color: rgba(22 , 24, 35, 0.03);
+    background-color: rgba(22, 24, 35, 0.03);
   }
 }
 
 // Header
 .header {
   position: relative;
+  flex-shrink: 0;
   height: 50px;
   margin-top: -8px;
 }

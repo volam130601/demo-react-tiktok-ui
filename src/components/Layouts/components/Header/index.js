@@ -12,6 +12,7 @@ import {
 import Tippy from "@tippyjs/react";
 import "tippy.js/dist/tippy.css";
 import classNames from "classnames/bind";
+import { Link } from "react-router-dom";
 
 import { InboxIcon, MessageIcon, UploadIcon } from "~/components/Icons";
 import images from "~/assets/images";
@@ -20,6 +21,7 @@ import Button from "~/components/Button";
 import styles from "./Header.module.scss";
 import Menu from "~/components/Popper/Menu";
 import Search from "../Search";
+import routesConfig from "~/config/routes";
 
 const cx = classNames.bind(styles);
 
@@ -95,7 +97,9 @@ function Header() {
   return (
     <header className={cx("wrapper")}>
       <div className={cx("inner")}>
-        <img src={images.logo} alt="Tiktok" />
+        <Link to={routesConfig.home} className={cx("logo-link")}>
+          <img src={images.logo} alt="Tiktok" />
+        </Link>
 
         <Search />
 
@@ -133,7 +137,6 @@ function Header() {
             {currentUser ? (
               <Image
                 className={cx("user-avatar")}
-                // src="https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/ea0854578085ab26effc2c7b8cefa270~c5_100x100.jpeg?x-expires=1651658400&x-signature=zeUCDyTxctGYZ5%2Bsh422klviXFE%3D"
                 src="https://files.fullstack.edu.vn/f8-prod/user_avatars/1/623d4b2d95cec.png"
                 alt="Nguyen Van A"
               />

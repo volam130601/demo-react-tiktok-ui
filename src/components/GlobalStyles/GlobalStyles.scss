@@ -7,6 +7,8 @@
   --text-color: #333;
   --text-color: #161823;
 
+  --font-family: "ProximaNova", sans-serif;
+
   //Default Layout
   --default-layout-header-height: 60px;
   --default-layout-width: 1150px;
@@ -23,11 +25,43 @@ html {
 }
 
 body {
-  font-family: 'ProximaNova', sans-serif;
+  font-family: var(--font-family);
   font-size: 1.6rem;
   line-height: 1.5;
   text-rendering: optimizeSpeed;
   color: var(--text-color);
+  overflow-y: overlay;
+}
+
+// Scrollbar CSS
+html *::-webkit-scrollbar {
+  border-radius: 0;
+  width: 8px;
+}
+
+html *::-webkit-scrollbar {
+  border-radius: 0;
+  width: 8px;
+}
+
+html *::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
+html *::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
+html *::-webkit-scrollbar-track {
+  border-radius: 0;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+html *::-webkit-scrollbar-track {
+  border-radius: 0;
+  background-color: rgba(0, 0, 0, 0);
 }
 
 button,
@@ -45,47 +79,47 @@ a[href] {
 // Fonts emmbeded
 @font-face {
   font-family: ProximaNova;
-  src: url('/assets/fonts/Proxima-Nova-Regular.woff2');
+  src: url("/assets/fonts/Proxima-Nova-Regular.woff2");
   font-weight: 400;
 }
 
 @font-face {
   font-family: ProximaNova;
-  src: url('/assets/fonts/ProximaNova-Semibold.woff2');
+  src: url("/assets/fonts/ProximaNova-Semibold.woff2");
   font-weight: 600;
 }
 
 @font-face {
   font-family: ProximaNova;
-  src: url('/assets/fonts/Proxima-Nova-Bold.woff2');
+  src: url("/assets/fonts/Proxima-Nova-Bold.woff2");
   font-weight: 700;
 }
 
 @font-face {
   font-family: SofiaPro;
-  src: url('/assets/fonts/sofiapro-bold.woff2');
+  src: url("/assets/fonts/sofiapro-bold.woff2");
   font-weight: 700;
 }
 
 // Custom tippy tooltip
 body {
   .tippy-box {
-      border-radius: 8px;
-      font-weight: 600;
-      font-size: 1.6rem;
-      line-height: 2.2rem;
-      background-color: rgba(84, 84, 84, 0.92);
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+    background-color: rgba(84, 84, 84, 0.92);
   }
 
   .tippy-arrow {
-      color: rgba(84, 84, 84, 0.92);
+    color: rgba(84, 84, 84, 0.92);
   }
 
   .tippy-content {
-      padding: 8px 9px;
+    padding: 8px 9px;
   }
 
-  .tippy-box[data-placement^='bottom'] > .tippy-arrow:before {
-      top: -8px;
+  .tippy-box[data-placement^="bottom"] > .tippy-arrow:before {
+    top: -8px;
   }
 }
