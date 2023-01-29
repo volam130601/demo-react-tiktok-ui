@@ -3,12 +3,13 @@ import { faCircleXmark, faSpinner } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import HeadlessTippy from "@tippyjs/react/headless";
 import classNames from "classnames/bind";
+
 import { Wrapper as PopperWrapper } from "~/components/Popper";
 import AccountItem from "~/components/AccountItem";
 import { SearchIcon } from "~/components/Icons";
 import styles from "./Search.module.scss";
-import $ from "jquery";
 import { useDebounce } from "~/hooks";
+import * as searchServices from "~/apiServices/searchServices";
 
 const cx = classNames.bind(styles);
 
@@ -28,37 +29,15 @@ function Search() {
       return;
     }
 
-    setLoading(true);
+    const fetchApi = async () => {
+      setLoading(true);
+      const result = await searchServices.search(debounced , 5);
 
-    const settings = {
-      async: true,
-      crossDomain: true,
-      url: `https://scraptik.p.rapidapi.com/search-users?keyword=${encodeURIComponent(
-        debounced
-      )}&count=5&cursor=0`,
-      method: "GET",
-      headers: {
-        "X-RapidAPI-Key": "4dd52768admshc84996327dfdd8cp18363ajsn766e280ff097",
-        "X-RapidAPI-Host": "scraptik.p.rapidapi.com",
-      },
+      setSearchResult(result);
+      setLoading(false);
     };
 
-    $.ajax(settings)
-      .done(function (response) {
-        let data = [];
-        response.user_list.map((item) => data.push(item.user_info));
-        setSearchResult(data);
-        setLoading(false);
-      })
-      .fail(function (xhr) {
-        setLoading(false);
-      });
-
-    // fetch(`https://tiktok.fullstack.edu.vn/api/users/search?q=hoaa&type=less`)
-    //   .then((res) => res.json())
-    //   .then((res) => {
-    //     setSearchResult(res.data);
-    //   });
+    fetchApi();
   }, [debounced]);
 
   const handleClear = () => {

@@ -11,12 +11,12 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import Tippy from "@tippyjs/react";
 import "tippy.js/dist/tippy.css";
-import { InboxIcon, MessageIcon, UploadIcon } from "~/components/Icons";
-import Image from "~/components/Image";
-import images from "~/assets/images";
-
-import Button from "~/components/Button";
 import classNames from "classnames/bind";
+
+import { InboxIcon, MessageIcon, UploadIcon } from "~/components/Icons";
+import images from "~/assets/images";
+import Image from "~/components/Image";
+import Button from "~/components/Button";
 import styles from "./Header.module.scss";
 import Menu from "~/components/Popper/Menu";
 import Search from "../Search";
